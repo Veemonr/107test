@@ -105,9 +105,8 @@
 .message-room {
     padding-top: 32px;
     padding-left: 16px;
-    height: 808px;
+    max-height: 808px;
     width: 896px;
-    overflow-y: hidden;
 }
 .search-room {
     display: flex;
@@ -249,10 +248,10 @@
 }
 .room-chat {
     flex-grow: 1;
-    width: 896px;
+    width: 876px;
     margin-top: 1px;
     margin-left: 20px;
-    overflow-y: scroll;
+    overflow-x: hidden;
 }
 .room-sendbox {
     width: 896;
@@ -413,6 +412,9 @@
     margin-top: 8px;
     padding-top: 8px;
     border-top: #A7B5C4 1px solid;
+}
+.blue-sender {
+    margin-right: 40px;
 }
 .black-screen {
     width: 100%;

@@ -60,8 +60,9 @@ export default function MessageBubble({ chat, listSender }) {
             {chat.speaker.toUpperCase()}
           </div>
         ) : (
-          ""
+          <div className="profile-small blue-sender" />
         )}
+        
       </div>
     </>
   );
