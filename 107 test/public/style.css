@@ -106,7 +106,7 @@
     padding-top: 32px;
     padding-left: 16px;
     height: 808px;
-    width: 412px;
+    width: 896px;
     overflow-y: hidden;
 }
 .search-room {
@@ -252,6 +252,7 @@
     width: 896px;
     margin-top: 1px;
     margin-left: 20px;
+    overflow-y: scroll;
 }
 .room-sendbox {
     width: 896;
@@ -261,6 +262,9 @@
 }
 .attached-logo {
     padding-left: 26px;
+}
+.attached-logo:hover {
+    cursor: pointer;
 }
 .sendbox-line {
     border-top: #8A8A8A solid 1px;
@@ -433,6 +437,8 @@
     font-size: 20px;
     font-weight: 700;
     line-height: 23.87px;
+    display: flex;
+    justify-content: space-between;
 }
 .modal-description {
     font-weight: 400;
@@ -491,4 +497,56 @@
 .modal-cancel {
     border: 1px #8A8A8A solid;
     color: #8A8A8A;
+}
+.modal-toggle {
+    width: 34px;
+    height: 20px;
+    border-radius: 28px;
+}
+.toggle-green {
+    background-color: #5EA74A;
+    animation-name: change-color-back;
+    animation-duration: 0.5s;
+}
+.toggle-button {
+    width: 16px;
+    height: 16px;
+    background-color: white;
+    border-radius: 100%;
+    margin-top: 2px;
+    left: 16px;
+    position: relative;
+}
+.modal-toggle:hover {
+    cursor: pointer;
+}
+.toggle-background-off {
+    background-color: #D9D9D9;
+    animation-name: change-color;
+    animation-duration: 0.5s;
+}
+.toggle-button-off {
+    left: 3px;
+    animation-name: move-toggle;
+    animation-duration: 0.5s;
+}
+.toggle-button-on {
+    animation-name: move-toggle-back;
+    animation-duration: 0.5s;
+}
+@keyframes change-color {
+    0% { background-color: #5EA74A;}
+    100% { background-color: #D9D9D9;}
+}
+@keyframes change-color-back {
+    0% { background-color: #D9D9D9;}
+    100% { background-color: #5EA74A;}
+}
+@keyframes move-toggle {
+    0% { left: 16px }
+    100% { left: 3px;}
+}
+@keyframes move-toggle-back {
+    0% { left: 3px }
+    100% { left: 3=16px;}
 }

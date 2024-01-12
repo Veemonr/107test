@@ -1,11 +1,16 @@
 
-export default function Modal({ changeModal }) {
+export default function Modal({ changeModal, settingBool, changeSetting }) {
     return (
         <>
-            <div className="modal">
+            <div className="modal preload">
                 <div className="black-screen" />
                 <div className="modal-message">
-                    <p className="modal-title">Custom Instructions</p>
+                    <div className="modal-title">
+                        <p>Custom Instructions</p>
+                        <div onClick={changeSetting} className={ settingBool ? "modal-toggle toggle-green" : "modal-toggle toggle-background-off"}>
+                            <div className={ settingBool ? "toggle-button toggle-button-on" : "toggle-button toggle-button-off"} />
+                        </div>
+                    </div>
                     <p className="modal-description modal-grey">What would you like ChatGPT to know about you to provide better responses?</p>
                     <input className="first-input input-modal" type="text" />
                     <p className="modal-grey modal-description">How would you like ChatGPT to respond?</p>

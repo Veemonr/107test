@@ -5,6 +5,11 @@ import MessageBubble from "./MessageBubble";
 
 export default function MessagerRoom() {
   const user = useContext(UserContext);
+  const [sendMessage, setSendMessage] = useState("")
+  function changeSend(event) {
+    const data = event.target.value
+    setSendMessage(data)
+  }
   const initialChat = [
     {
       id: 1,
@@ -31,7 +36,7 @@ export default function MessagerRoom() {
       translated_message: "英語のメッセージ",
     },
   ];
-  const chatList = useState(initialChat);
+  const [chatList, setChatList] = useState(initialChat);
   const listSender = initialChat.map((chat) => chat.speaker);
   return (
     <>
@@ -57,7 +62,7 @@ export default function MessagerRoom() {
           <div className="room-sendbox">
             <div className="sendbox-line" />
             <img className="attached-logo" src="/attached.svg" alt="attached" />
-            <textarea className="input-send" type="text" />
+            <textarea onChange={(event) => changeSend(event)} className="input-send" type="text" value={sendMessage} />
             <div className="send-button">
               <img src="/send.svg" alt="send" />
             </div>

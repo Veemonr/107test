@@ -8,9 +8,13 @@ import Modal from "./components/Modal";
 function App() {
   const [userTheme, setUserTheme] = useState("107");
   const [modalSetting, setModalSetting] = useState(false)
+  const [settingBool, setSettingBool] = useState(true)
   function changeUserTheme() {
     if(userTheme === "107") setUserTheme("Ato")
     else setUserTheme("107")
+  }
+  function changeSetting() {
+    setSettingBool(!settingBool)
   }
   function changeModal() {
     setModalSetting(!modalSetting)
@@ -18,7 +22,7 @@ function App() {
   return (
     <>
       <UserContext.Provider value={userTheme}>
-          { modalSetting ? <Modal changeModal={changeModal} /> : "" }
+          { modalSetting ? <Modal settingBool={settingBool} changeSetting={changeSetting} changeModal={changeModal} /> : "" }
         <div className="body">
           <Navbar changeUserTheme={changeUserTheme} changeModal={changeModal} />
           <MessageList />
